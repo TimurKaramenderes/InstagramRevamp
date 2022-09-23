@@ -22,7 +22,9 @@ const Users = quoteDB.model(
     password : {
         type : String
     }
-}, {collection: 'users'})
+}, 
+{ timestamps : true }, 
+{collection: 'users'})
 );
 
 module.exports = Users;

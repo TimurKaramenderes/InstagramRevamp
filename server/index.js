@@ -3,13 +3,14 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const mongoDB = process.env.DBurl;
-// const exeRouter = require ('./routes/routes.js');
+const cookieSession = require("cookie-session");
+const exeRouter = require ('./routes/routes.js');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// app.use('/', exeRouter);
+app.use('/', exeRouter);
 
 mongoose.connect(mongoDB);
 const database = mongoose.connection;
