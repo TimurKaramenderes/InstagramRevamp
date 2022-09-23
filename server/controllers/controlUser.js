@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const { deleteOne } = require('../models/modelUser');
 let Users = require("../models/modelUser");
 
 const saltRounds = 10;
@@ -7,7 +8,7 @@ const registerUser = (req, res) => {
     
     Users.findOne({email : req.body.email}).then((user)=>{
         if(user) {
-            return res.status(400).json({email : "email already registred"})
+            return res.status(400).json({email : "email already registered"});
 
         }else {
             const name = req.body.name;
@@ -15,7 +16,12 @@ const registerUser = (req, res) => {
             const username = req.body.username;
             const email = req.body.email;
             const password = req.body.password;
+            const confirmPwd = req.body.confirmPwd;
 
+            if(password !== confirmPwd) {
+                return res.status(400).json({msg : "passwords dont match"});
+            }
+            
             const newUsers = new Users ({   
                 name,
                 lastname,
@@ -36,6 +42,25 @@ const registerUser = (req, res) => {
     });
 };
 
+const loginUser = (req, res) => {
+
+     Users.findOne({email : req.params.email})
+        .then((user)=>{
+            if(!user){
+                return res.status(400).json({msg : "that email is not registered"});
+            }
+        bcrypt.compare(req.params.password, user.password, (err, isMatch)=>{
+            if(err) throw err;
+            if(isMatch) {
+                return res.json('password is correct');
+            } else {
+                return res.status(400).json({msg : "password is incorrect"});
+            }
+        })
+        })
+        .catch(err => res.status(400).json('Error' +err))
+}
+
 // const getAllUser = (req, res) => {
 //     Users.find()
 //     .then(result => res.json(result))
@@ -48,7 +73,7 @@ const registerUser = (req, res) => {
 //     .catch(err => res.status(400).json('Error'+err))
 // };
 
-module.exports = registerUser;
-//     getAllUser,
-
-//     getUser
+module.exports = {
+    registerUser,
+    loginUser
+}
