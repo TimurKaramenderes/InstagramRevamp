@@ -1,5 +1,6 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+// const bcrypt = require('bcrypt');
+// const jwt = require('jsonwebtoken');
+
 const Images = require('../models/modelImg');
 
 const registerImg = (req, res) => {
@@ -30,4 +31,4 @@ const imgByUser = (req, res) => {
 module.exports ={
     imgByUser,
     registerImg
-}
+};
