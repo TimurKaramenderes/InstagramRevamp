@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { deleteOne } = require('../models/modelUser');
+const jwt = require('jsonwebtoken');
 let Users = require("../models/modelUser");
 
 const saltRounds = 10;
@@ -44,22 +44,37 @@ const registerUser = (req, res) => {
 
 const loginUser = (req, res) => {
 
-     Users.findOne({email : req.params.email})
+     Users.findOne({email : req.body.email})
         .then((user)=>{
             if(!user){
                 return res.status(400).json({msg : "that email is not registered"});
             }
-        bcrypt.compare(req.params.password, user.password, (err, isMatch)=>{
-            if(err) throw err;
-            if(isMatch) {
-                return res.json('password is correct');
-            } else {
-                return res.status(400).json({msg : "password is incorrect"});
-            }
-        })
-        })
-        .catch(err => res.status(400).json('Error' +err))
-}
+            bcrypt.compare(req.body.password, user.password).then(
+                (valid) => {
+                  if (!valid) {
+                    return res.status(401).json({
+                      error: new Error('Incorrect password!')
+                    });
+                  }
+                  const token = jwt.sign(
+                    { userId: user._id },
+                    'RANDOM_TOKEN_SECRET',
+                    { expiresIn: '24h' });
+                  res.status(200).json({
+                    userId: user._id,
+                    token: token
+                  });
+                }
+              ).catch(
+                (error) => {
+                  res.status(500).json({
+                    error: error
+                  });
+                }
+              );
+            })
+        .catch(err => res.status(400).json('Error' +err));
+    }
 
 // const getAllUser = (req, res) => {
 //     Users.find()
@@ -77,3 +92,4 @@ module.exports = {
     registerUser,
     loginUser
 }
+
