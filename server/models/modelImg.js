@@ -13,15 +13,12 @@ const Images = quoteDB.model(
     description : {
         type : String
     },
-    user : {
-        type : mongoose.Schema.Types.ObjectId, ref : 'users'
-    },
     likes : {
         type : Number
-    },
-    password : {
-        type : String
-    }    
+    },  
+    user : {
+        type : mongoose.Schema.Types.ObjectId, ref : 'users'
+    }  
 },
 { timestamps : true }, 
 {collection: 'images'})
