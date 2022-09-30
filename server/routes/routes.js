@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const auth = require ('../middleware/auth');
-const {loginUser, registerUser} = require('../controllers/controlUser');
+const {loginUser, registerUser, getAllUser} = require('../controllers/controlUser');
 const { registerImg, imgByUser } = require('../controllers/controlImg');
 const { registerComm, commentByUser, commentByImg } = require('../controllers/controlComment');
 const { registerSubComm, subCommByUser, subCommByComm } = require('../controllers/controlSubComm');
@@ -10,6 +10,7 @@ router.post('/login', loginUser);
 
 router.post('/registerImg', registerImg);
 router.get('/imgByUser/:user', imgByUser);
+router.get('/get', getAllUser);
 
 router.post('/registerComm', registerComm);
 router.get('/commByUser/:user', commentByUser);

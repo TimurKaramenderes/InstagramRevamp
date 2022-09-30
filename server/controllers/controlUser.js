@@ -67,11 +67,11 @@ const loginUser = (req, res) => {
   .catch(err => res.status(400).json('Error' +err));
 }
 
-// const getAllUser = (req, res) => {
-//     Users.find()
-//     .then(result => res.json(result))
-//     .catch(err => res.status(400).json('Error'+err))
-// };
+const getAllUser = (req, res) => {
+    Users.find()
+    .then(result => res.json(result))
+    .catch(err => res.status(400).json('Error'+err))
+};
 
 // const getUser = (req, res) => {
 //     Users.find({user : req.params.user})
@@ -81,6 +81,7 @@ const loginUser = (req, res) => {
 
 module.exports = {
     registerUser,
-    loginUser
+    loginUser,
+    getAllUser
 }
 
