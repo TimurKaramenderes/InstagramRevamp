@@ -6,11 +6,29 @@ const { registerComm, commentByUser, commentByImg } = require('../controllers/co
 const { registerSubComm, subCommByUser, subCommByComm } = require('../controllers/controlSubComm');
 
 router.post('/registerUser', registerUser);
-router.post('/login', loginUser);
+// router.post('/login', loginUser);
 
 router.post('/registerImg', registerImg);
 router.get('/imgByUser/:user', imgByUser);
-router.get('/get', getAllUser);
+
+router.get('/get', (req, res) => {
+  getAllUser()
+  .then((response) => res.status(200).json({users: response, message: "ok" }))
+  .catch(error=> res.status(200).json({error: error, message: "notok"}))
+});
+
+// router.get('/', checkAuth, (req: Request, res: Response) => {
+//     userModel
+//       .getAllUsers()
+//       .then((response: []) => {
+//         res
+//           .status(200)
+//           .send(JSON.stringify({ result: 'ok', 'All users': response }))
+//       })
+//       .catch((error: Error) => {
+//         res.status(200).send(JSON.stringify({ result: 'nok', error }))
+//       })
+//   })
 
 router.post('/registerComm', registerComm);
 router.get('/commByUser/:user', commentByUser);

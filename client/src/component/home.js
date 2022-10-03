@@ -1,28 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import axios from 'axios';
 
 const url = "http://localhost:8080/registerUser";
 
 const Home = () => { 
+  // const [users, setUsers] = useState([]);
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await axios(
+  //       url, 
+  //     );
+  //       console.log(result);
+  //     setUsers(result.data.users);
+  //   };
 
-    const formSubmitHandler = async () =>{
-       
-         const newUser = {
-            'name' : name,
-            'lastname' : "hyi",
-            'username' : "lo",
-            'email' : email,
-            'password' : "123",
-            'confirmPwd' : "123"
-        }
+  //   fetchData();
+  // }, []);
 
-      await axios.post(url, newUser)
-      .then(res => { console.log(res)})
-      .catch(err => { console.log(err)});
+  // return (
+
+  //     <ul>
+  //       {users.map(user => (
+  //         <li key={user._id}>
+  //           <p >{user.name}</p>
+  //           <p >{user.email}</p>
+  //         </li>
+  //       ))}
+  //        <button>Hello</button>
+  //     </ul>
+  //   );
+
+//   const newUser = {
+//     'name' : name,
+//     'lastname' : "hyi",
+//     'username' : "lo",
+//     'email' : email,
+//     'password' : "123",
+//     'confirmPwd' : "123"
+// }
+    
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  function postUser() { 
+
+    const newUser = {
+          'name' : name,
+          'lastname' : "hyi",
+          'username' : "lo",
+          'email' : email,
+          'password' : "123",
+          'confirmPwd' : "123"
     }
+
+     axios.post(url, newUser)
+    .then(res => { console.log(res)})
+    .catch(err => { console.log(err)})
+  }
+
+  const formSubmitHandler = (event) => {
+    event.preventDefault()
+    postUser();
+  }
+
+  //fetch();
 
   return (
     <div>
