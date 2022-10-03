@@ -5,14 +5,12 @@ let Users = require("../models/modelUser");
 const saltRounds = 10;
 
 const registerUser = (req, res) => {
-    
+
     Users.findOne({email : req.body.email}).then((user)=>{
         if(user) {
             return res.status(400).json({email : "email already registered"});
 
         }else {
-            const name = req.body.name;
-            const lastname = req.body.lastname;
             const username = req.body.username;
             const email = req.body.email;
             const password = req.body.password;
@@ -23,8 +21,6 @@ const registerUser = (req, res) => {
             }
             
             const newUsers = new Users ({   
-                name,
-                lastname,
                 username,
                 email,
                 password,
@@ -39,8 +35,9 @@ const registerUser = (req, res) => {
             }); 
   
         };
-    });
-};
+    })
+}
+
 
 const loginUser = (req, res) => {
 
@@ -67,11 +64,16 @@ const loginUser = (req, res) => {
   .catch(err => res.status(400).json('Error' +err));
 }
 
-const getAllUser = (req, res) => {
+const getAllUser = () =>
+  new Promise((resolve, reject) => {
     Users.find()
-    .then(result => res.json(result))
-    .catch(err => res.status(400).json('Error'+err))
-};
+      .then((response) => {resolve(response)})
+      .catch((error) => {reject(error)})
+  });
+    // Users.find()
+    // .then(result => res.status(200).json(result))
+    // .catch(err => res.status(400).json('Error'+err));
+
 
 // const getUser = (req, res) => {
 //     Users.find({user : req.params.user})

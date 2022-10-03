@@ -7,12 +7,6 @@ const quoteDB = mongoose.createConnection(mongoDB);
 const Users = quoteDB.model(
     'Users',
     new mongoose.Schema({
-    name : {
-        type : String
-    },
-    lastname : {
-        type : String
-    },
     username : {
         type : String
     },
