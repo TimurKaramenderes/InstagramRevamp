@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
-// import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Hall from "../Feed/Hall";
 import "./Register.css";
 import axios from 'axios';
+import { Navigate } from "react-router-dom"
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -10,6 +10,11 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = 'http://localhost:8080/registerUser';
 
 const Register = () => {
+
+    
+
+
+
     const userRef = useRef();
     const errRef = useRef();
 
@@ -32,6 +37,7 @@ const Register = () => {
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
+  
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -163,10 +169,14 @@ const Register = () => {
                             onFocus={() => setMatchFocus(true)}
                             onBlur={() => setMatchFocus(false)}
                         />
-                
+                           
+                                
+                                
+                            
 
                             <button className="buttonLog">Sign Up</button>
-                            <button className="buttonLog">Bypass</button>
+                            <button className="buttonLog"> By Pass</button>
+                            
                     </form>
                     </section>
                     
