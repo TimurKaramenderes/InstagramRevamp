@@ -165,7 +165,8 @@ const Register = () => {
                         />
                 
 
-                        <button className="buttonLog">Sign Up</button>
+                            <button className="buttonLog">Sign Up</button>
+                            <button className="buttonLog">Bypass</button>
                     </form>
                     </section>
                     

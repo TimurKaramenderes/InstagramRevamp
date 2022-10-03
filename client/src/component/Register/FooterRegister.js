@@ -6,7 +6,7 @@ const FooterRegister =  () => {
       <p className='text'>
         <span className='line'>
           {/*put router link here*/}
-          Vous avez déjà un compte ? <a href='#'>Connectez-vous.</a>
+          Vous avez déjà un compte ? <a href='./Feed/Hall.js'>Connectez-vous.</a>
         </span>
       </p>
     );
