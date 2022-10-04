@@ -1,0 +1,49 @@
+.button_container_profile{
+display: flex;
+position: relative;
+align-items: center;
+justify-content: left;
+gap: 8px;
+width: 157px;
+height: 36px;
+left: 4.42%;
+right: 49.26%;
+top: 4.32%;
+bottom: 83.72%;
+background: rgba(207, 207, 207, 0.841);
+backdrop-filter: blur(10px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 28px;
+font-size: 0.4em;
+border: none;
+color: white;
+margin: 15px 0 0 0
+}
+
+
+
+.profile_infos_image{
+position: relative;
+width: 21px;
+height: 21px;
+margin-left: 8px;
+border-radius: 100px;
+background: #D9D9D9;
+}
+
+.profile_infos_txt{
+display: flex;
+flex-direction: column;
+text-align: left;
+align-items: left;
+gap: 0px;
+}
+
+.Bold_profile_infos{
+    font-family: "Circular Bold";
+}
+
+.Book_location_infos {
+    font-family: "Circular Book";
+}
+

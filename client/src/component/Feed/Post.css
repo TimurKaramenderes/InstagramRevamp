@@ -1,0 +1,40 @@
+.container_post{
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto;
+}
+
+.post_photo{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background: #2B2B2B;
+border-radius: 28px;
+width: 339px;
+height: 301px;
+margin: auto;
+
+}
+
+.container_buttons_top{
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    justify-content: space-between;
+}
+
+.container_buttons_bot{
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    justify-content: space-between;
+}
+
+.button_container_left{
+    display: flex;
+    flex-direction: row;
+}   
+
