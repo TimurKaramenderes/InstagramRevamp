@@ -1,31 +1,29 @@
 # Framery *Front&Back*
----
 
 *Everyone has the ability to create pieces of art. Just take a picture and Frame it.*
 
 
 
 ### Frame it!
----
 
 *Everyone has the ability to create pieces of art. Just take a picture and Frame it.*
 
 We believe people needs to share their piece of art and their side of their story. They just need a frame to be highlighted.
 
 
+
 ### UX/UI Mock ups
 
 ![screenshot](/test%20copie.jpg)
-*Logo might change, 
+*Logo might change
 
 
 Link to the full project:
 https://www.figma.com/file/eyXcHM26zGBwtOUqFkMiHZ/Framery-UI-DESIGN?node-id=0%3A1
 
 
-### Learning Objectives
----
 
+### Learning Objectives
 
 - Make the front of the application
 
@@ -40,7 +38,6 @@ https://www.figma.com/file/eyXcHM26zGBwtOUqFkMiHZ/Framery-UI-DESIGN?node-id=0%3A
 
 
 ### Funnel
----
 
 - Registration => Sign In, Sign Up, creation of profile
  
@@ -52,7 +49,7 @@ Check the full funnel here! https://miro.com/app/board/uXjVPUTHdbM=/
 
 
 ### Features
----
+
 **Framery** is a social media based on Instagram features. Goal is to focus on image instead of video with a mix between Tweeter (repost), Pinterest (Pin/Save Items in galleries) and Instagram (feed concept/scroll).
 
 - Being able to sign in, sign up, and create a profile.
