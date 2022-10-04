@@ -1,39 +1,76 @@
-# Smiling Frontend (Subscription)
+# Framery *Front&Back*
+---
 
-### Prerequesites
+*Everyone has the ability to create pieces of art. Just take a picture and Frame it.*
+
+
+
+### Frame it!
+---
+
+*Everyone has the ability to create pieces of art. Just take a picture and Frame it.*
+
+We believe people needs to share their piece of art and their side of their story. They just need a frame to be highlighted.
+
+
+### Front
+
+
+### Learning Objectives
+---
+
+
+- Make the front of the application
+
+- Setup, design and manage a database management system
+
+- Translate a real-life usecase into a database model
+
+- Discover a full app setup.
+
+- Model a simple non-relational DB model
+
+
+
+### Funnel
+---
+
+- Registration => Sign In, Sign Up, creation of profile
+ 
+- The Hall => First page of the app, where all the new posts of all users are displayed.
+ 
+- The Floor => Page where the profile of the user or the person they search for is displayed.
+
+Check the full funnel here! https://miro.com/app/board/uXjVPUTHdbM=/
+
+
+### Features
+---
+**Framery** is a social media based on Instagram features. Goal is to focus on image instead of video with a mix between Tweeter (repost), Pinterest (Pin/Save Items in galleries) and Instagram (feed concept/scroll).
+
+- Being able to sign in, sign up, and create a profile.
+
+- Showcase every Post made on the platform in Chronological order.
+
+- Being able to create a new post on its own floor.
+
+
+### Tech in use
 
 To be able to run and develop on our code base you need to have some libraries installed on your local machine.
 
-- `nvm` node version manager, to handle different versions of `node` in one machine
-- `node` (>= 14.16.0) node environment
-- `yarn` package manager for the project dependencies
-- `ssh` to connect via ssh to the server
-
-### Starting Point
-
-- Clone this repo on your local machine. Go to folder `website/`
-- Install dependencies with `yarn install`
-- ask one of the team mates to pass you the `.env.*` files for the secrets.
-- ask one of the team mates to pass you a dump of the dbs `dbs` to run them locally.
+- `react` using Component and Hooks.
+- `node.js` for Routes and Back.
+- `npm` package installation.
+- `css` vanilla. Like the old ones.
+- `html5` basic.
+- `mangoDB` datbase in use.
+- `axios (react)` fetching database stuffs
+- `eslint` for code formatting.
+- `prettier` for code formatting.
 
 ### Development
 
-The repo has many scripts, available via `yarn run <name of the script I want to run>`.
-
-The most notable ones:
-
-**Local development**
-
-- `yarn run start` work on local and see changes as you work
-- `yarn run build` to build the project, this is to see if the typescript code compiles to js. (rarely use in local, but useful)
-- `yarn run build:<env-to-build>` to be build the project for that particular env
-- `yarn run test` for testing components (_WORK IN PROGRESS_)
-- `yarn run lint` for linting the project with `eslint` \*
-
-\*code formatting and code quality checks happen automatically if you have the following extensions installed in your favorite code editor.
-
-- `eslint`
-- `prettier`
 
 ### Code Architecture
 
@@ -44,7 +81,7 @@ website
 |
 src
 |
-components/  // components related things
+components**/  // components related things
 |
 hooks/  // custom helper hooks
 |
@@ -64,15 +101,13 @@ utils/   // helper functions
 |
 styles/   // **read below
 
-** css related stuff we use styled components in most of our newer components, some old components use the old scss classes, we prefer new changes to be with styled components
+** each component has his own css file.
 ```
 
-### Other tools we used that you might need access too
+### Other tools we used 
 
-- Bitbucket (`frontend, services, and scripts repo's`)
-- Jira
-- Sentry
-- ubuntu server
-- slack
+- Figma (`frontend, services, and scripts repo's`)
+- Adobe Illustrator (`SVG creation`)
+
 
 If questions please ask. ❤️ &copy; 2022
