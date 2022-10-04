@@ -1,9 +1,12 @@
 import React, { useState , useEffect} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const url = "http://localhost:8080/registerUser";
 
-const Home = () => { 
+const url = "http://localhost:8080/login";
+
+
+const Login = () => { 
   // const [users, setUsers] = useState([]);
 
   // useEffect(() => {
@@ -39,46 +42,53 @@ const Home = () => {
 //     'password' : "123",
 //     'confirmPwd' : "123"
 // }
-    
-  const [name, setName] = useState("");
+  const navigate = useNavigate();
+  const [userToken, setUserToken] = useState(""); 
+  const [pwd, setPwd] = useState("");
   const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState(false);
 
-  function postUser() { 
+  const formSubmitHandler = async (event) => {
+    event.preventDefault();
 
-    const newUser = {
-          'name' : name,
-          'lastname' : "hyi",
-          'username' : "lo",
-          'email' : email,
-          'password' : "123",
-          'confirmPwd' : "123"
+    const user = {
+      'email' : email,
+      'password' : pwd
     }
-
-     axios.post(url, newUser)
-    .then(res => { console.log(res)})
-    .catch(err => { console.log(err)})
+    try{
+      const result = await axios.post(url, user);
+      console.log(result);
+      setUserToken(result.data.token);
+      setSuccess(true);
+      navigate("/hall");
+    } catch (err) {
+      console.log(err);
+      }
   }
 
-  const formSubmitHandler = (event) => {
-    event.preventDefault()
-    postUser();
-  }
-
-  //fetch();
+  console.log(userToken);
 
   return (
+    <>
+    {success ? (
+      <section>
+          <h1>Success!</h1>
+      </section>
+  ) : (
     <div>
         <form>
-        <input type="text" value={name}
-          onChange={(e) => setName(e.target.value)}></input><br/>
+        <input type="text" value={pwd}
+          onChange={(e) => setPwd(e.target.value)}></input><br/>
         <input type="text" value={email}
           onChange={(e) => setEmail(e.target.value)}></input>
         <button onClick={formSubmitHandler}></button>
         </form>
-    </div>
-  );
 
+   </div>
+   )}
+    </>
+  );
 }
 
-export default Home;
+export default Login;
 

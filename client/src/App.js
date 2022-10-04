@@ -1,12 +1,23 @@
 import './App.css';
-import Home from './component/home';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Hall from './component/hall';
+import Login from './component/home';
 import Register from './component/Register';
 
 function App() {
   return (
-    <div className="App">
-     <Register/> 
-    </div>
+    <BrowserRouter>
+    <Routes>
+        <Route
+            path="/"
+            element={ <Login /> }
+        />
+           <Route
+            path="/hall"
+            element={ <Hall /> }
+        />
+    </Routes>
+</BrowserRouter>
   );
 }
 
