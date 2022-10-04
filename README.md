@@ -13,7 +13,9 @@
 We believe people needs to share their piece of art and their side of their story. They just need a frame to be highlighted.
 
 
-### Front
+### UX/UI Mock ups
+
+![alt text]()
 
 
 ### Learning Objectives
