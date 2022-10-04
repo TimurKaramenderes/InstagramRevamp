@@ -1,6 +1,6 @@
 import React, { useState , useRef, useEffect} from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const url = "http://localhost:8080/login";
@@ -87,9 +87,8 @@ const Login = () => {
     </form>
     <p className="text">
        Vous n'avez pas un compte ?  
-        <span className="line">
-            {/*put router link here*/}
-            <a href="#">Enregistrez-vous.</a>
+        <span className="line">           
+        <Link className="link" to="/register">Enregistrez-vous</Link>
         </span>
     </p>
 </section>
