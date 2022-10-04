@@ -6,7 +6,12 @@ import Post from "./Post"
 const Hall = () => {
     
     return (
-        <Post />
+        <div>
+            <Post />
+            <Post />
+            <Post />
+        </div>
+        
     )
 
 }

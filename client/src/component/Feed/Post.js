@@ -6,7 +6,6 @@ import ProfileButton from "../Buttons/ProfileButton"
 import "./Post.css";
 
 const Post = () => {
-    
     return (
         <div className="container_post">
             <div className="post_photo">
@@ -29,10 +28,7 @@ const Post = () => {
             </div>
         </div>
     )
-
 }
-
-
 
 
 export default Post;
