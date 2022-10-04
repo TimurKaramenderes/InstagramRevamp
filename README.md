@@ -2,6 +2,7 @@
 
 *Everyone has the ability to create pieces of art. Just take a picture and Frame it.*
 
+![screenshot](/test%20copie.jpg)
 
 
 ### Frame it!
@@ -9,13 +10,6 @@
 *Everyone has the ability to create pieces of art. Just take a picture and Frame it.*
 
 We believe people needs to share their piece of art and their side of their story. They just need a frame to be highlighted.
-
-
-
-### UX/UI Mock ups
-
-![screenshot](/test%20copie.jpg)
-*Logo might change
 
 
 Link to the full project:
