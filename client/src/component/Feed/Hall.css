@@ -22,6 +22,9 @@ height: 301px;
 }
 
 .elipse_save{
+display: flex;
+justify-content: center;
+flex-direction: row;
 width: 37px;
 height: 37px;
 left: 84.66%;
@@ -92,6 +95,9 @@ gap: 0px;
 }
 
 .elipse_comment{
+display: flex;
+justify-content: center;
+flex-direction: row;
 left: 4.42%;
 right: 84.66%;
 top: 82.72%;
@@ -104,6 +110,9 @@ border-radius: 100px;
 }
 
 .elipse_rt{
+display: flex;
+justify-content: center;
+flex-direction: row;
 left: 4.42%;
 right: 84.66%;
 top: 82.72%;
@@ -119,6 +128,7 @@ border-radius: 100px;
 .elipse_like{
 display: flex;
 justify-content: center;
+flex-direction: row;
 left: 79.94%;
 right: 4.42%;
 top: 83.06%;
@@ -135,6 +145,6 @@ margin: 0 15px 15px 0;
     flex-direction: row;
 }   
 
-.svg_like{
+.svg{
     width: 16px;
 }
