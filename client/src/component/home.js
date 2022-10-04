@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState , useRef, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,48 +7,27 @@ const url = "http://localhost:8080/login";
 
 
 const Login = () => { 
-  // const [users, setUsers] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await axios(
-  //       url, 
-  //     );
-  //       console.log(result);
-  //     setUsers(result.data.users);
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  // return (
-
-  //     <ul>
-  //       {users.map(user => (
-  //         <li key={user._id}>
-  //           <p >{user.name}</p>
-  //           <p >{user.email}</p>
-  //         </li>
-  //       ))}
-  //        <button>Hello</button>
-  //     </ul>
-  //   );
-
-//   const newUser = {
-//     'name' : name,
-//     'lastname' : "hyi",
-//     'username' : "lo",
-//     'email' : email,
-//     'password' : "123",
-//     'confirmPwd' : "123"
-// }
+  const userRef = useRef();
+  const errRef = useRef();
   const navigate = useNavigate();
   const [userToken, setUserToken] = useState(""); 
+  const [errMsg, setErrMsg] = useState('');
   const [pwd, setPwd] = useState("");
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
+  const [pwdFocus, setPwdFocus] = useState(false);
 
-  const formSubmitHandler = async (event) => {
+  useEffect(() => {
+    userRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrMsg('');
+  }, [email, pwd]);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const user = {
@@ -62,7 +41,7 @@ const Login = () => {
       setSuccess(true);
       navigate("/hall");
     } catch (err) {
-      console.log(err);
+      setErrMsg("Invalid Password or e-mail");
       }
   }
 
@@ -75,16 +54,46 @@ const Login = () => {
           <h1>Success!</h1>
       </section>
   ) : (
-    <div>
-        <form>
-        <input type="text" value={pwd}
-          onChange={(e) => setPwd(e.target.value)}></input><br/>
-        <input type="text" value={email}
-          onChange={(e) => setEmail(e.target.value)}></input>
-        <button onClick={formSubmitHandler}></button>
-        </form>
+    <section>
+    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+    <form onSubmit={handleSubmit}>
 
-   </div>
+        <input
+            placeholder="E-mail d'utilisateur"
+            type="text"
+            id="email"
+            ref={userRef}
+            autoComplete="off"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required
+            aria-describedby="uidnote"
+            onFocus={() => setEmailFocus(true)}
+            onBlur={() => setEmailFocus(false)}
+            />
+       
+            <input
+            placeholder="Mot de passe"
+            type="password"
+            id="password"
+            onChange={(e) => setPwd(e.target.value)}
+            value={pwd}
+            required
+            aria-describedby="pwdnote"
+            onFocus={() => setPwdFocus(true)}
+            onBlur={() => setPwdFocus(false)}
+        />
+        <button className="buttonLog">Sign In</button>
+    </form>
+    <p className="text">
+       Vous n'avez pas un compte ?  
+        <span className="line">
+            {/*put router link here*/}
+            <a href="#">Enregistrez-vous.</a>
+        </span>
+    </p>
+</section>
+
    )}
     </>
   );
