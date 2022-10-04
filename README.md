@@ -15,7 +15,7 @@ We believe people needs to share their piece of art and their side of their stor
 
 ### UX/UI Mock ups
 
-![alt text]()
+![alt text](/client/Capture%20d%E2%80%99%C3%A9cran%202022-10-04%20%C3%A0%2020.50.57.png)
 
 
 ### Learning Objectives
