@@ -1,4 +1,3 @@
-# InstagramRevamp
 # Smiling Frontend (Subscription)
 
 ### Prerequesites
