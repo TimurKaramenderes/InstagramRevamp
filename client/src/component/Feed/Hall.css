@@ -1,0 +1,150 @@
+.post_photo{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+background: #2B2B2B;
+border-radius: 28px;
+width: 339px;
+height: 301px;
+
+}
+
+.container_buttons_top{
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    justify-content: space-between;
+}
+
+.elipse_save{
+display: flex;
+justify-content: center;
+flex-direction: row;
+width: 37px;
+height: 37px;
+left: 84.66%;
+right: 4.42%;
+top: 4.98%;
+bottom: 82.72%;
+border-radius: 100%;
+margin: 15px 15px 0 0;  
+background: #FFFFFF;
+}
+
+
+.button_container_profile{
+display: flex;
+position: relative;
+align-items: center;
+justify-content: left;
+gap: 8px;
+width: 157px;
+height: 36px;
+left: 4.42%;
+right: 49.26%;
+top: 4.32%;
+bottom: 83.72%;
+background: rgba(207, 207, 207, 0.841);
+backdrop-filter: blur(10px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 28px;
+font-size: 0.4em;
+border: none;
+color: white;
+margin: 15px 0 0 0
+}
+
+.profile_infos_image{
+position: relative;
+width: 21px;
+height: 21px;
+margin-left: 8px;
+border-radius: 100px;
+background: #D9D9D9;
+}
+
+
+.profile_infos_txt{
+display: flex;
+flex-direction: column;
+text-align: left;
+align-items: left;
+gap: 0px;
+
+}
+
+.Bold_profile_infos{
+    font-family: "Circular Bold";
+}
+
+.Book_location_infos {
+    font-family: "Circular Book";
+}
+
+.container_buttons_bot{
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    justify-content: space-between;
+}
+
+.elipse_comment{
+display: flex;
+justify-content: center;
+flex-direction: row;
+left: 4.42%;
+right: 84.66%;
+top: 82.72%;
+bottom: 4.98%;
+background: #FFFFFF;
+width: 37px;
+height: 37px;
+margin: 0 0 15px 15px;
+border-radius: 100px;
+}
+
+.elipse_rt{
+display: flex;
+justify-content: center;
+flex-direction: row;
+left: 4.42%;
+right: 84.66%;
+top: 82.72%;
+bottom: 4.98%;
+background: #FFFFFF;
+width: 37px;
+height: 37px;
+margin: 0 0 0 5px;
+border-radius: 100px;
+
+}
+
+.elipse_like{
+display: flex;
+justify-content: center;
+flex-direction: row;
+left: 79.94%;
+right: 4.42%;
+top: 83.06%;
+bottom: 4.98%;
+width: 53px;
+height: 36px;
+background: #FFFFFF;
+border-radius: 28px;
+margin: 0 15px 15px 0;
+}
+
+.button_container_left{
+    display: flex;
+    flex-direction: row;
+}   
+
+.svg{
+    width: 16px;
+}

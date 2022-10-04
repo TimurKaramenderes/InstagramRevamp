@@ -12,6 +12,11 @@
     font-family: "Circular Light";
     src: url(./fonts/CircularStd-Light.otf);
 }
+
+@font-face{
+    font-family: "Circular Bold";
+    src: url(./fonts/CircularStd-Bold.otf);
+}
 * {
     margin: 0;
     padding: 0;

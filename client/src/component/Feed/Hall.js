@@ -1,10 +1,10 @@
-import React, { useState , useEffect} from 'react';
-import axios from 'axios';
-import { Navigate } from 'react-router-dom';
+import "./Hall.css"
+import Likes from "../svg/likes.svg"
+import Comment from "../svg/comment.svg"
+import Repost from "../svg/repost.svg"
+import Save from "../svg/save.svg"
 
 const Hall = () => {
-
-    
     
     return (
         <div>
@@ -22,7 +22,7 @@ const Hall = () => {
                     </button>
                     <div className="button_container_save">
                         <div className="elipse_save">
-                        <img className="svg" alt="repost button" />
+                        <img className="svg" src={Save} alt="repost button" />
                         </div>
                     </div>
                 </div>
@@ -30,15 +30,15 @@ const Hall = () => {
                 <button className="container_buttons_bot">
                     <div className="button_container_left">
                         <div className="elipse_comment">
-                        <img className="svg" alt="repost button" />
+                        <img className="svg" src={Comment} alt="repost button" />
                         </div>
                         <div className="elipse_rt">
-                            <img className="svg" alt="repost button" />
+                            <img className="svg" src={Repost} alt="repost button" />
                         </div>
                     </div>
                     <div className="button_container_right">
                         <div className="elipse_like">
-                            <img className="svg" alt="likes button" />
+                            <img className="svg" src={Likes} alt="likes button" />
                         </div>
                    </div>
                 </button>
