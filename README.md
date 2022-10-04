@@ -15,7 +15,7 @@ We believe people needs to share their piece of art and their side of their stor
 
 ### UX/UI Mock ups
 
-![screenshot](/test%20copie.jpg.png)
+![screenshot](/test%20copie.jpg)
 *Logo might change, 
 
 
