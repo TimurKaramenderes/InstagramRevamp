@@ -1,8 +1,7 @@
 import { useRef, useState, useEffect } from "react";
-import Hall from "../Feed/Hall";
 import "./Register.css";
 import axios from 'axios';
-import { Navigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -11,12 +10,10 @@ const REGISTER_URL = 'http://localhost:8080/registerUser';
 
 const Register = () => {
 
-    
-
-
-
     const userRef = useRef();
     const errRef = useRef();
+
+    const navigate = useNavigate();
 
     const [user, setUser] = useState('');
     const [validName, setValidName] = useState(false);
@@ -55,6 +52,8 @@ const Register = () => {
         setErrMsg('');
     }, [user, pwd, matchPwd])
 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -74,9 +73,8 @@ const Register = () => {
         }
         try {
             const response = await axios.post(REGISTER_URL, newUser);
-            console.log(response?.data);
-            console.log(response?.accessToken);
-            console.log(JSON.stringify(response))
+            // console.log(response.data);
+            // console.log(JSON.stringify(response))
             setSuccess(true);
             //clear state and controlled inputs
             //need value attrib on inputs for this
@@ -101,7 +99,7 @@ const Register = () => {
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                    <Link className="link" to="/login">Sign In</Link>
                     </p>
                 </section>
             ) : (
@@ -168,9 +166,7 @@ const Register = () => {
                             aria-describedby="confirmnote"
                             onFocus={() => setMatchFocus(true)}
                             onBlur={() => setMatchFocus(false)}
-                        />
-                           
-                                
+                        />                               
                                 
                             
 
@@ -178,6 +174,12 @@ const Register = () => {
                             <button className="buttonLog"> By Pass</button>
                             
                     </form>
+                    <p className="text">
+                              Vous avez un compte ?  
+                     <span className="line">           
+                        <Link className="link" to="/login">Sign In</Link>
+                     </span>
+                    </p>
                     </section>
                     
             )}
