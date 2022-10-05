@@ -29,8 +29,15 @@ const subCommByComm = (req, res) => {
      .catch(err => res.status(400).json('Error'+err))
  };
 
+ const deletesubComm = (req, res) =>{
+    SubComments.findByIdAndDelete({_id : req.params._id})
+    .then(() => res.json("Response delete"))
+    .catch(err => res.status(400).json('Error'+err))
+};
+
 module.exports = {
     registerSubComm,
     subCommByUser,
-    subCommByComm
+    subCommByComm,
+    deletesubComm
 };

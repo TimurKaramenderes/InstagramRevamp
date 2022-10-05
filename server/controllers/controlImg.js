@@ -35,8 +35,15 @@ const updateLike = (req, res) => {
    .catch(err => res.status(400).json('Error'+err))
 }
 
+const deleteImg = (req, res) =>{
+    Images.findByIdAndDelete({_id : req.params._id})
+    .then(() => res.json("image delete"))
+    .catch(err => res.status(400).json('Error'+err))
+}
+
 module.exports ={
     imgByUser,
     registerImg,
-    updateLike
+    updateLike,
+    deleteImg
 };

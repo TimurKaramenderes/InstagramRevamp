@@ -29,8 +29,15 @@ const commentByImg = (req, res) => {
     .catch(err => res.status(400).json('Error'+err))
 };
 
+const deleteComm = (req, res) =>{
+    Comments.findByIdAndDelete({_id : req.params._id})
+    .then(() => res.json("Comment delete"))
+    .catch(err => res.status(400).json('Error'+err))
+}
+
 module.exports ={
     registerComm,
     commentByImg,
-    commentByUser
+    commentByUser,
+    deleteComm
 };
