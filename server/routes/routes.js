@@ -2,8 +2,8 @@ const router = require('express').Router();
 const auth = require ('../middleware/auth');
 const {loginUser, registerUser, getAllUser, deleteUser} = require('../controllers/controlUser');
 const { registerImg, imgByUser, updateLike, deleteImg } = require('../controllers/controlImg');
-const { registerComm, commentByUser, commentByImg } = require('../controllers/controlComment');
-const { registerSubComm, subCommByUser, subCommByComm } = require('../controllers/controlSubComm');
+const { registerComm, commentByUser, commentByImg, deleteComm } = require('../controllers/controlComment');
+const { registerSubComm, subCommByUser, subCommByComm, deletesubComm } = require('../controllers/controlSubComm');
 
 router.post('/registerUser', registerUser);
 router.post('/login', loginUser);
@@ -23,9 +23,11 @@ router.get('/get', (req, res) => {
 router.post('/registerComm', auth, registerComm);
 router.get('/commByUser/:user', commentByUser);
 router.get('/commByImg/:image', commentByImg);
+router.delete('/deleteComm/:_id',auth, deleteComm);
 
 router.post('/registerSubComm',auth, registerSubComm);
 router.get('/subCommByUser/:user', subCommByUser);
 router.get('/subCommByComm/:comment', subCommByComm);
+router.delete('/deleteSubCom/:_id', auth, deletesubComm);
 
 module.exports = router; 
