@@ -1,6 +1,7 @@
 import React, { useState , useRef, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Logo from "./Logo/Logo.js"
 
 
 const url = "http://localhost:8080/login";
@@ -49,6 +50,7 @@ const Login = () => {
 
   return (
     <>
+    <Logo />  
     {success ? (
       <section>
           <h1>Success!</h1>
@@ -86,10 +88,9 @@ const Login = () => {
         <button className="buttonLog">Sign In</button>
     </form>
     <p className="text">
-       Vous n'avez pas un compte ?  
         <span className="line">
             {/*put router link here*/}
-            <a href="#">Enregistrez-vous.</a>
+           Vous n'avez pas un compte ? <a href="#">Enregistrez-vous.</a>
         </span>
     </p>
 </section>
