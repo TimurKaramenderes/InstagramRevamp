@@ -1,11 +1,8 @@
 import React, { useState , useRef, useEffect} from 'react';
-import axios from 'axios';
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-import Logo from "./Logo/Logo.js"
-=======
+import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom';
->>>>>>> 4d0f72080168fa67159eff6ce0170b4683668c1d
+import Logo from "./Logo/Logo.js"
+
 
 
 const url = "http://localhost:8080/login";
