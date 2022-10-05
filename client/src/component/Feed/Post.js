@@ -4,11 +4,12 @@ import SaveButton from "../Buttons/SaveButton"
 import LikeButton from "../Buttons/LikeButton"
 import ProfileButton from "../Buttons/ProfileButton"
 import "./Post.css";
+import {StyledPost, StyledPhotoContainer} from "./Post.styles.css.js"  
 
-const Post = () => {
+const Post = ({marginTop}) => {
     return (
-        <div className="container_post">
-            <div className="post_photo">
+        <StyledPost marginTop={marginTop} className="container_post">
+            <StyledPhotoContainer>
                 <div className="container_buttons_top">
                         <ProfileButton />
                     <div className="button_container_save">
@@ -25,8 +26,8 @@ const Post = () => {
                         <LikeButton />
                    </div>
                 </button>
-            </div>
-        </div>
+            </StyledPhotoContainer>
+        </StyledPost>
     )
 }
 
