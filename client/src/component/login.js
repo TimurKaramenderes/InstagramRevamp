@@ -1,6 +1,8 @@
 import React, { useState , useRef, useEffect} from 'react';
-import axios from 'axios';
+import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom';
+import Logo from "./Logo/Logo.js"
+
 
 
 const url = "http://localhost:8080/login";
@@ -49,6 +51,7 @@ const Login = () => {
 
   return (
     <>
+    <Logo />  
     {success ? (
       <section>
           <h1>Success!</h1>
