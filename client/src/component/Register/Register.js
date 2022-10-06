@@ -1,7 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import "./Register.css";
 import axios from 'axios';
+import Logo from "../Logo/Logo.js"
 import { useNavigate, Link } from "react-router-dom";
+
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -94,7 +96,8 @@ const Register = () => {
     }
 
     return (
-        <>
+        <>  
+            <Logo />
             {success ? (
                 <section>
                     <h1>Success!</h1>
@@ -171,13 +174,13 @@ const Register = () => {
                             
 
                             <button className="buttonLog">Sign Up</button>
-                            <button className="buttonLog"> By Pass</button>
+    
                             
                     </form>
                     <p className="text">
-                              Vous avez un compte ?  
+                              
                      <span className="line">           
-                        <Link className="link" to="/login">Sign In</Link>
+                       Vous avez un compte ? <Link className="link" to="/login">Sign In</Link>
                      </span>
                     </p>
                     </section>

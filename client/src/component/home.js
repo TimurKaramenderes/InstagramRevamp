@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import Logo from "./Logo/Logo.js"
 
 const Home = () => {
 
@@ -11,7 +12,8 @@ const Home = () => {
     }
 
   return (
-    <>
+    <>  
+        <Logo />
         <form>
         <button className="buttonLog" onClick={register}>Créer un compte</button>
         <button className="buttonLog" onClick={login}>Se connecter</button>
