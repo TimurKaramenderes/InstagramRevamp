@@ -5,6 +5,7 @@ import Register from './component/Register/Register';
 import FooterRegister from "./component/Register/FooterRegister";
 import Hall from "./component/Feed/Hall";
 import Home from './component/home';
+import UploadImg from './component/uploadImg';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={ <Login /> }/>
         <Route path="/hall" element={ <Hall /> }/>
         <Route path="/register" element={<Register />}/>
+        <Route path="/uploadImg" element={<UploadImg />}/>
     </Routes>
 </BrowserRouter>
   )}
