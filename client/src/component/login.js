@@ -89,9 +89,9 @@ const Login = () => {
         <button className="buttonLog">Sign In</button>
     </form>
     <p className="text">
-       Vous n'avez pas un compte ?  
+        
         <span className="line">           
-        <Link className="link" to="/register">Enregistrez-vous</Link>
+       Vous n'avez pas un compte ? <Link className="link" to="/register">Enregistrez-vous</Link>
         </span>
     </p>
 </section>
