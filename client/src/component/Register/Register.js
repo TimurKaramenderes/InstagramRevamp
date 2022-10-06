@@ -180,7 +180,7 @@ const Register = () => {
                     <p className="text">
                               
                      <span className="line">           
-                       Vous avez un compte ? <Link className="link" to="/login">Sign In</Link>
+                       Vous avez un compte ? <Link className="link" to="/login">Connectez-vous.</Link>
                      </span>
                     </p>
                     </section>
