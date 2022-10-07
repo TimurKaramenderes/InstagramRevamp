@@ -23,6 +23,7 @@ a, a:visited {
     
 input[type="text"],
 input[type="password"],
+input[type="file"],
 textarea {
 font-family: "Circular Light";
 padding: 15px;

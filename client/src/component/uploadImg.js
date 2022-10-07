@@ -1,14 +1,19 @@
 import { useState } from "react";
+import Logo from "./Logo/Logo";
 import axios from "axios";
+import {useCookies} from "react-cookie";
 
+let user_id = "";
 const url = "http://localhost:8080/registerImg"; 
 
 const UploadImg = () => {
-
+    
+    console.log(localStorage.getItem("token"));
   
     const [img, setImg] = useState("");
     const [description, setDescription] = useState("");
     const [result, setResult] = useState("");
+    const [cookies, setCookie] = useCookies(["token"]);
 
     const upload = async (e) => {
         e.preventDefault();
@@ -32,11 +37,11 @@ const UploadImg = () => {
         const newImg = {
             'url' : image,
             'description' : description,
-            // 'user' : 
+            
       }
-
+        const headers = "Bearer "+cookies["token"];
         try {
-            const response = await axios.post(url, newImg);
+            const response = await axios.post(url, newImg, {headers: {Authorization:headers}});
             console.log("image added");
         } catch (err) {
             console.log(err);
@@ -46,6 +51,7 @@ const UploadImg = () => {
 
     return (
         <>
+        <Logo />
         <form>
         <div>
             <label for="image">Upload Image</label>
@@ -59,7 +65,7 @@ const UploadImg = () => {
         </div>
        
         <div>
-            <button type="submit" onClick={upload}>Submit</button>
+            <button className="buttonLog" type="submit" onClick={upload}>Submit</button>
         </div>
     </form>
         <img src={result}></img>

@@ -1,25 +1,27 @@
 import React, { useState , useRef, useEffect} from 'react';
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom';
-import Logo from "./Logo/Logo.js"
+import Logo from "./Logo/Logo.js";
+import { useCookies } from "react-cookie";
 
 
 
 const url = "http://localhost:8080/login";
 
-
 const Login = () => { 
 
+  // const [token, setToken] = useState("");
+  const [userId, setUserId] =useState("");
   const userRef = useRef();
   const errRef = useRef();
   const navigate = useNavigate();
-  const [userToken, setUserToken] = useState(""); 
   const [errMsg, setErrMsg] = useState('');
   const [pwd, setPwd] = useState("");
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
   const [pwdFocus, setPwdFocus] = useState(false);
+  const [cookies, setCookie] = useCookies(["token"]);
 
   useEffect(() => {
     userRef.current.focus();
@@ -38,16 +40,22 @@ const Login = () => {
     }
     try{
       const result = await axios.post(url, user);
-      console.log(result);
-      setUserToken(result.data.token);
+      console.log(result.data);
+      setUserId(result.data.userId);
+      // setToken(result.data.token);
       setSuccess(true);
-      navigate("/hall");
+      setCookie("token", result.data.token, {
+        path: "/",
+        sameSite: "none",
+        secure: true,
+        maxAge: 86400,
+      });
+      navigate("/profile");
     } catch (err) {
       setErrMsg("Invalid Password or e-mail");
       }
   }
 
-  console.log(userToken);
 
   return (
     <>
