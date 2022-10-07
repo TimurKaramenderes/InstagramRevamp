@@ -12,7 +12,7 @@ router.post('/registerUser', registerUser);
 router.post('/login', loginUser);
 router.delete('/deleteUser/:_id', deleteUser);
 
-router.post('/registerImg', registerImg);
+router.post('/registerImg', auth, registerImg);
 router.get('/imgByUser/:user', imgByUser);
 router.put('/updateLike', updateLike);
 router.delete('/deleteImg/:_id',auth, deleteImg);

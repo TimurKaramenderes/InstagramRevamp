@@ -8,7 +8,7 @@ const registerImg = (req, res) => {
             const url = req.body.url;
             const description = req.body.description;
             const likes = 0;
-            const user = req.body.user;
+            const user = req.userId;
 
             const newImage = new Images ({   
                 url,
