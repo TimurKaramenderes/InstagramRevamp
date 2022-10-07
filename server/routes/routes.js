@@ -1,5 +1,8 @@
 const router = require('express').Router();
+
 const auth = require ('../middleware/auth');
+// const multer = require ('../middleware/multerConfig');
+
 const {loginUser, registerUser, getAllUser, deleteUser} = require('../controllers/controlUser');
 const { registerImg, imgByUser, updateLike, deleteImg } = require('../controllers/controlImg');
 const { registerComm, commentByUser, commentByImg, deleteComm } = require('../controllers/controlComment');
@@ -9,7 +12,7 @@ router.post('/registerUser', registerUser);
 router.post('/login', loginUser);
 router.delete('/deleteUser/:_id', deleteUser);
 
-router.post('/registerImg', auth, registerImg);
+router.post('/registerImg', registerImg);
 router.get('/imgByUser/:user', imgByUser);
 router.put('/updateLike', updateLike);
 router.delete('/deleteImg/:_id',auth, deleteImg);
