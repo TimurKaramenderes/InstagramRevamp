@@ -1,0 +1,19 @@
+.elipse_save{
+display: flex;
+justify-content: center;
+flex-direction: row;
+width: 37px;
+height: 37px;
+left: 84.66%;
+right: 4.42%;
+top: 4.98%;
+bottom: 82.72%;
+border-radius: 100%;
+margin: 15px 15px 0 0;  
+background: #FFFFFF;
+}
+
+
+.svg{
+    width: 16px;
+}

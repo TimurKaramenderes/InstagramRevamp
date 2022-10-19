@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@font-face {
+    font-family: "Circular Book";
+    src: url(./fonts/CircularStd-Book.otf);
+}
+@font-face {
+    font-family: "Circular Medium";
+    src: url(./fonts/CircularStd-Medium.otf);
+}
+
+@font-face {
+    font-family: "Circular Light";
+    src: url(./fonts/CircularStd-Light.otf);
+}
+
+@font-face{
+    font-family: "Circular Bold";
+    src: url(./fonts/CircularStd-Bold.otf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Circular Book";
+    font-size: 22px;
+    color: #fff;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(243, 243, 243);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 1rem 0.5rem;
+}

@@ -1,0 +1,14 @@
+.elipse_rt{
+display: flex;
+justify-content: center;
+flex-direction: row;
+left: 4.42%;
+right: 84.66%;
+top: 82.72%;
+bottom: 4.98%;
+background: #FFFFFF;
+width: 37px;
+height: 37px;
+margin: 0 0 0 5px;
+border-radius: 100px;
+}
